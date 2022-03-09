@@ -1,5 +1,3 @@
-package com.company;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -10,7 +8,7 @@ import java.util.Scanner;
 public class Main{
 
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("/Users/ruqayyahmustafa/IdeaProjects/Zoo/src/com/company/StudentInfo");
+        File file = new File("/Users/andreasantos/IdeaProjects/studentportal/src/main/java/StudentInfo");
         Scanner studentFile = new Scanner(file);
         Scanner usrInput = new Scanner(System.in);
         List<studentInfo> studentInfoList = new ArrayList<studentInfo>();
@@ -20,25 +18,31 @@ public class Main{
         while(studentFile.hasNext()){
             System.out.println("This is where the loop starts");
             String studentID = studentFile.next();
-            String email = studentFile.next();
-            String password = studentFile.next();
             String lastName = studentFile.next();
             String firstName = studentFile.next();
+            String email = studentFile.next();
+            String password = studentFile.next();
             double currentGPA = studentFile.nextDouble();
-            for(int j = 0; j<3; j++) {
-                classes.add(j, studentFile.next());
-                grades.add(j, studentFile.next());
-            }//end for i
-            double tuition = studentFile.nextInt();
+
+            classes.add(0, studentFile.next());
+            grades.add(0, studentFile.next());
+            classes.add(1, studentFile.next());
+            grades.add(1, studentFile.next());
+            classes.add(2, studentFile.next());
+            grades.add(2, studentFile.next());
+            classes.add(3, studentFile.next());
+
+            int tuition = studentFile.nextInt();
 
             studentInfoList.add(i, new studentInfo(studentID, email,password, lastName, firstName,
-                                currentGPA, Collections.singletonList(classes.get(i)),
-                                Collections.singletonList(grades.get(i)), tuition));
+                                currentGPA, Collections.singletonList((classes.get(i))), Collections.singletonList((grades.get(i))), tuition));
             studentInfoList.get(i).printStudentInfo();
             i++;
 
 
-        }
+        } studentFile.close();
+        calculator myCalculator = new calculator();
 
-    }//end main
+        System.out.println("You need a : "  ) ;
+    }
 }//end Main

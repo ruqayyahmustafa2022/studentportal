@@ -1,4 +1,3 @@
-package com.company;
 import java.util.*;
 
 public class studentInfo {
@@ -10,7 +9,7 @@ public class studentInfo {
     private double currentGPA;
     private List<String> classes;
     private List<String> grades;
-    private double tuition;
+    private int tuition;
 
     public String getStudentId() {
         return studentId;
@@ -44,12 +43,12 @@ public class studentInfo {
         this.grades = grades;
     }
 
-    public double getTuition() {
+    public int getTuition() {
         return tuition;
     }
 
     public studentInfo(String studentId, String email, String password, String lastName, String firstName,
-                       double currentGPA, List<String> classes, List<String> grades, double tuition)
+                       double currentGPA, List<String> classes, List<String> grades, int tuition)
     {
         this.studentId = studentId;
         this.email = email;
@@ -70,8 +69,8 @@ public class studentInfo {
                 "Email Address: " + email + '\n' +
                 "Classes \n" +
                 "1. " + classes + " - " + grades + '\n' +
-                "2. " + classes + " - " + grades + '\n' +
-                "3. " + classes + " - " + grades + '\n' +
+                //"2. " + classes + " - " + grades + '\n' +
+               // "3. " + classes + " - " + grades + '\n' +
                 "GPA: " + currentGPA +'\n' +
                 "Tuition: " + tuition);
     }
